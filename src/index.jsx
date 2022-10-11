@@ -8,3 +8,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 		<App />
 	</React.StrictMode>
 )
+
+// @video min 39:45 React JavaScript Framework for Beginners – Project-Based Course
+// FreeCodeCamp
