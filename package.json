@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.2.2"
+    "bootstrap": "^5.2.2",
+    "react-code-producer": "^0.0.5",
+    "react-function-snippets": "^1.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
