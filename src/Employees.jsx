@@ -1,4 +1,5 @@
 import {useState} from 'react'
+
 const Employees = () => {
 
     const [employees, setEmployees] = useState([
@@ -90,6 +91,11 @@ const Employees = () => {
   return (
 
     <main>
+      {
+        employees.map((employee) =>(
+          <p>{employee.fullName}</p>
+        ))
+      }
     </main>
   )
 }
