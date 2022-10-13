@@ -4,6 +4,8 @@ import maleProfile from './images/maleProfile.jpg'
 
 const Employees = () => {
 
+  const [selectedTeam, setSelectedTeam] = useState('TeamB')
+
   const [employees, setEmployees] = useState([
     {
       id: 1,
@@ -90,13 +92,23 @@ const Employees = () => {
       teamName: "TeamD"
     }
   ])
+
+  function handelTeamSelectionChange(event) {
+    setSelectedTeam(event.target.value)
+  }
+
+  function handleEmployeeCardClick(event){
+const transformedEmployees = employees.map((employee) => employee.id === event.currentTarget.id)
+    
+  }
+
   return (
 
     <main className='container' >
       <div class='row justify-content-center mt-3 mb-3 ' >
         <div class='row justify-content-center mt-3 mb-3 ' >
           <div className='col-8' >
-            <select>
+            <select className='form-select form-select-lg' value={selectedTeam} onChange={handelTeamSelectionChange}>
               <option value='TeamA' >TeamA</option>
               <option value='TeamB' >TeamB</option>
               <option value='TeamC' >TeamC</option>
@@ -111,7 +123,7 @@ const Employees = () => {
           <div className='card-collection' >
             {
               employees.map((employee) => (
-                <div id={employee.id} className='card m-2' style={{ cursor: 'pointer' }} >
+                <div id={employee.id} className='card m-2' style={{ cursor: 'pointer' }} onClick={handleEmployeeCardClick} >
                   {(employee.gender === 'male') ?
 
                     <img src={maleProfile} className='card-img-top' /> :
